@@ -19,7 +19,9 @@ using namespace __gnu_cxx;
 
 bool version_count[LIBCUCKOO_DEFAULT_SIZE/LIBCUCKOO_DEFAULT_SLOT_PER_BUCKET]{false};
 int main() {
-    //runCuckoohash();//non-concurrency
+    runCuckoohash();//non-concurrency
+    runMap();
+    runHashmap();
     //runLockConcurrentCuckoohash();
     //runNonlockConcurrentCuckoohash();
     concurrent_load();
