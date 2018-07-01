@@ -22,9 +22,12 @@
 using namespace std;
 using namespace __gnu_cxx;
 
+//文件名
 const char file_name[] = "/media/wangluobin/Story/mac24_port4_address40000000_repeated1.txt";
+//定义键值的类型
 using key = int64_t;
 using value = int;
+//一下是为了并行用的,但还没有成功
 int batch_size = 64;
 mutex mutex_instream;
 mutex mutex_cuckoohash[LIBCUCKOO_DEFAULT_SIZE];
@@ -266,7 +269,7 @@ void runHashmap(){
                  find_num,insert_num,update_num);
     in.close();
 }
-
+//并行的Cuckoohash没有实现
 void runConcurrentBatchDeal(){
     //mutex_instream.lock();
 
